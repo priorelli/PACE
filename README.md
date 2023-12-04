@@ -41,7 +41,7 @@ The functions `inference_step` of the class `Agent` in *simulation/agent.py* con
 
 Note that all the variables are normalized to ensure that every contribution to the belief updates has the same magnitude
 
-## Required Libraries
+## Required libraries
 
 matplotlib==3.6.2
 
