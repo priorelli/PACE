@@ -23,7 +23,7 @@ More advanced parameters can be manually set from *config.py*. Both the target p
 The variable `task` affects the generation of target positions, and can assume the following values:
 1. `test`: generates random target positions at each trial - see Figure 7;
 2. `all`: generates the simulation used for Figure 6, i.e., one of the 9 fixed target positions of Figure 3A, followed by the home button position. The variable `n_reps` denotes the number of repetition per target position;
-3. `single`: fixes the target to one of the 9 positions, for all trials. This position can be set with the function `set_trajectory()` in *simulation/inference.py*.
+3. `single`: fixes the target to one of the 9 positions, for all trials. This position can be set with the function `set_trajectory` in *simulation/inference.py*.
 
 The variable `context` specifies whether (`dynamic`) or not (`static`) the target moves. The target velocity is set by `target_vel`.
 
@@ -33,9 +33,12 @@ The arm configuration is defined through the dictionary `joints`. The value `lin
 
 ### Active inference simulation
 
-The active inference simulation involves the scripts *simulation/inference.py* and *simulation/agent.py*. The former contains a subclass of `Window` in *environment/window.py*, which is in turn a subclass `pyglet.window.Window`. The only overriden function is `update(dt)`, which defines the instructions to run in a single cycle. Specifically, the subclass `Inference` initialize the agent, the sequence of target positions, and the log; during each update, it retrieves proprioceptive and visual observations through functions defined in *environment/window.py*, calls the function `inference_step(S, target_joint, step)` of *simulation/agent.py*, and finally moves the arm and the target.
+The active inference simulation involves the scripts *simulation/inference.py* and *simulation/agent.py*. The former contains a subclass of `Window` in *environment/window.py*, which is in turn a subclass `pyglet.window.Window`. The only overriden function is `update`, which defines the instructions to run in a single cycle. Specifically, the subclass `Inference` initialize the agent, the sequence of target positions, and the log; during each update, it retrieves proprioceptive and visual observations through functions defined in *environment/window.py*, calls the function `inference_step` of *simulation/agent.py*, and finally moves the arm and the target.
 
-As concerns *simulation/agent.py*
+The functions `inference_step` of the class `Agent` in *simulation/agent.py* contains all the instructions of Algorithm 1. In particular, the function `get_p` returns a visual prediction through the VAE, and a proprioceptive prediction through the matrix `G_p`. Note that the input and output of the VAE is stored in an additional array, which is needed for the successive error backpropagation. Note also this function returns a velocity prediction `p_vel`, which however is not used in the analyses of the paper. The function `get_i` returns future beliefs computed through the intention matrices stored in `H`, which actually correspond to `I_t` and `I_h` in the paper. Functions `get_e_s` and `get_e_mu` compute sensory and dynamics prediction error, respectively. The attractor gain `k` is used in the latter function.
+
+
+Note that all the beliefs are normalized to ensure that every contribution to the belief updates has the same magnitude
 
 ## Required Libraries
 
