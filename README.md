@@ -12,19 +12,22 @@ This is the project related to the paper [Flexible Intentions: An Active Inferen
 
 The simulation can be launched through **main.py** either with the option `-m` for manual control, `-s` for the active inference agent with default parameters, or `-a` for choosing the parameters from the console. If no option is specified, the default simulation will be launched. For the manual control simulation, the arm can be moved with the keys `Z`, `X`, `LEFT`, `RIGHT`, `UP` and `DOWN`.
 
-The dataset for the VAE is generated through the option `-g`, while `-t` will run a benchmark test on the trained VAE.
+The dataset for the VAE is generated through the option `-g`, while `-t` will run a benchmark test on the trained VAE. For each datapoint, a random target size is sampled from the variable `target_min_max` in **config.py**.
 
 Plots can be generated through **plot.py**, either with the option `-a` for the free energy derivatives, `-d` for the belief trajectories, `-f` for the final positions of the hand, `-g` for the VAE gradients, `-p` for angles and velocities, `-s` for the scores, or `-v` for generating a video of the simulation.
 
 ### Advanced configuration
 
-More advanced parameters can be manually set from **config.py**. Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`.
+More advanced parameters can be manually set from **config.py**. Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`. Custom log names are set with the variable `log_name`.
 
 The variable `task` affects the generation of target positions, and can assume the following values:
 1. `test`: generates random target positions at each trial - see Figure 7;
 2. `all`: generates the simulation used for Figure 6, i.e., one of the 9 fixed target positions of Figure 3A, followed by the home button position. The variable `n_reps` denotes the number of repetition per target position;
 3. `single`: fixes the target to one of the 9 positions, for all trials. This position can be set with the function `set_trajectory` in **simulation/inference.py**.
 
+The variable `context` specifies whether (`dynamic`) or not (`static`) the target moves. The target velocity is set by `target_vel`.
+
+The variable `phases` chooses the movement onset policy of the agent (`immediate`, `fixed`, or `dynamic`), as defined in the paper.
 
 ## Required Libraries
 
