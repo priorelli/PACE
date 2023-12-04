@@ -27,7 +27,7 @@ The variable `task` affects the generation of target positions, and can assume t
 
 The variable `context` specifies whether (`dynamic`) or not (`static`) the target moves. The target velocity is set by `target_vel`.
 
-The variable `phases` chooses the movement onset policy of the agent (`immediate`, `fixed`, or `dynamic`), as defined in the paper.
+The variable `phases` chooses the movement onset policy of the agent (`immediate`, `fixed`, or `dynamic`) as defined in the paper.
 
 ## Required Libraries
 
