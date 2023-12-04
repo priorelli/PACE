@@ -15,7 +15,7 @@ class Agent:
 
         # Initialize intention matrices
         z, i = np.zeros((c.n_joints, c.n_joints)), np.eye(c.n_joints)
-        self.H = [np.block([[z, z, z], [i, i, z], [z, z, i]]),
+        self.I = [np.block([[z, z, z], [i, i, z], [z, z, i]]),
                   np.block([[z, z, z], [z, i, z], [i, z, i]])]
 
         # Initialize sensory matrices
@@ -52,11 +52,11 @@ class Agent:
 
         return P, [input_, output], self.mu[1].dot(self.G_p)
 
-    def get_i(self):
+    def get_h(self):
         """
         Get intentions
         """
-        return np.array([self.mu[0].dot(h) for h in self.H])
+        return np.array([self.mu[0].dot(i) for i in self.I])
 
     def get_e_s(self, S, P):
         """
@@ -66,12 +66,12 @@ class Agent:
         """
         return [s - p for s, p in zip(S, P)]
 
-    def get_e_mu(self, I):
+    def get_e_mu(self, H):
         """
         Get dynamics prediction errors
-        :param I: intentions
+        :param H: intentions
         """
-        self.E_i = (I - self.mu[0]) * c.k * self.mode
+        self.E_i = (H - self.mu[0]) * c.lmbda * self.mode
 
         return self.mu[1] - self.E_i
 
@@ -101,9 +101,9 @@ class Agent:
         # Intention components
         forward_i = np.zeros((c.n_joints * 3))
         # backward_i = np.zeros((c.n_joints * 3))
-        for g, h, e in zip(self.beta, self.H, E_mu):
+        for g, i, e in zip(self.beta, self.I, E_mu):
             forward_i += g * e
-            # backward_i -= e.dot(c.k * g * (1 - h.T))
+            # backward_i -= e.dot(c.lmbda * g * (1 - i.T))
 
         self.mu_dot[0] = self.mu[1] + lkh['prop'] + lkh['vis']
         # self.mu_dot[0] += backward_i
@@ -183,14 +183,14 @@ class Agent:
         P, grad_v, p_vel = self.get_p()
 
         # Get intentions
-        I = self.get_i()
+        H = self.get_h()
 
         # Get sensory prediction errors
         E_s = self.get_e_s(S, P)
         # e_vel = S[1][0] - p_vel
 
         # Get dynamics prediction errors
-        E_mu = self.get_e_mu(I)
+        E_mu = self.get_e_mu(H)
 
         # Get likelihood components
         likelihood = self.get_likelihood(E_s, grad_v)
