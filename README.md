@@ -29,6 +29,8 @@ The variable `context` specifies whether (`dynamic`) or not (`static`) the targe
 
 The variable `phases` chooses the movement onset policy of the agent (`immediate`, `fixed`, or `dynamic`) as defined in the paper.
 
+The arm configuration is defined through the dictionary `joints`. The value `link` specifies the joint to which the new one is attached; `angle` encodes the starting value of the joint; `limit` defines the min and max angle limits.
+
 ## Required Libraries
 
 matplotlib==3.6.2
