@@ -8,7 +8,7 @@ This is the project related to the papers [Flexible Intentions: An Active Infere
 
 ## HowTo
 
-# Start simulation
+### Start simulation
 
 The simulation can be launched through **main.py** either with the option "-m" for manual control, "-s" for the active inference agent with default parameters, or "-a" for choosing the parameters from the console. If no option is specified, the default simulation will be launched. For the manual control simulation, the arm can be moved with the keys Z, X, LEFT, RIGHT, UP and DOWN.
 
@@ -16,7 +16,7 @@ The dataset for the VAE is generated through the option "-g", while "-t" will ru
 
 Plots can be generated through **plot.py**, either with the option "-a" for the free energy derivatives, "-d" for the belief trajectories, "-f" for the final positions of the hand, "-g" for the VAE gradients, "-p" for angles and velocities, "-s" for the scores, or "-v" for generating a video of the simulation.
 
-# Advanced configuration
+### Advanced configuration
 
 More advanced parameters can be manually set from **config.py**. Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`.
 
