@@ -8,7 +8,7 @@ This is the project related to the papers [Flexible Intentions: An Active Infere
 
 ## HowTo
 
-### Start simulation
+### Start the simulation
 
 The simulation can be launched through **main.py** either with the option "-m" for manual control, "-s" for the active inference agent with default parameters, or "-a" for choosing the parameters from the console. If no option is specified, the default simulation will be launched. For the manual control simulation, the arm can be moved with the keys Z, X, LEFT, RIGHT, UP and DOWN.
 
