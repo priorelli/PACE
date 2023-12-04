@@ -1,4 +1,4 @@
-# Flexible intentions
+# Flexible intentions in active inference
 
 <p align="center">
   <img src="/reference/images/env.png">
