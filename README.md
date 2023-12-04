@@ -6,11 +6,11 @@
 
 <div align="justify">
 
-This is the project related to the papers "<i><a href="https://www.frontiersin.org/articles/10.3389/fncom.2023.1128694/full">Flexible Intentions: An Active Inference Theory</a></i>" and "<i><a href="https://link.springer.com/chapter/10.1007/978-3-031-28719-0_19">Intention Modulation for Multi-step Tasks in Continuous Time Active Inference</a></i>".
+This is the project related to the papers <i><a href="https://www.frontiersin.org/articles/10.3389/fncom.2023.1128694/full">Flexible Intentions: An Active Inference Theory</a></i> and <i><a href="https://link.springer.com/chapter/10.1007/978-3-031-28719-0_19">Intention Modulation for Multi-step Tasks in Continuous Time Active Inference</a></i>. It contains a proposal about encoding environmental entities (e.g., a target to reach or a previously memorized home button) and realizing dynamic goal-directed behavior such as object tracking, and some analyses on multisensory integration for movements.
 
 </div>
 
-## How To
+## HowTo
 
 <div align="justify">
 
