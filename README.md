@@ -35,7 +35,7 @@ The variable `phases` chooses the movement onset policy of the agent (`immediate
 
 The arm configuration is defined through the dictionary `joints`. The value `link` specifies the joint to which the new one is attached; `angle` encodes the starting value of the joint; `limit` defines the min and max angle limits.
 
-### Active inference simulation
+### Active inference
 
 The active inference simulation involves the scripts *simulation/inference.py* and *simulation/agent.py*. The former contains a subclass of `Window` in *environment/window.py*, which is in turn a subclass `pyglet.window.Window`. The only overriden function is `update`, which defines the instructions to run in a single cycle. Specifically, the subclass `Inference` initialize the agent, the sequence of target positions, and the log; during each update, it retrieves proprioceptive and visual observations through functions defined in *environment/window.py*, calls the function `inference_step` of *simulation/agent.py*, and finally moves the arm and the target.
 
