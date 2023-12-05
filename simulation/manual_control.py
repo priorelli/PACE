@@ -20,7 +20,7 @@ class ManualControl(Window):
 
         # Update objects
         if c.context == 'dynamic':
-            self.move_objects()
+            self.move_target()
 
         # Print info
         self.step += 1

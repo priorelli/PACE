@@ -10,7 +10,7 @@ from environment.arm import Arm
 # Define window class
 class Window(pyglet.window.Window):
     def __init__(self):
-        super().__init__(c.width, c.height, 'PACE', vsync=False)
+        super().__init__(c.width, c.height, 'Flexible intentions', vsync=False)
         # Initialize arm
         self.arm = Arm()
 

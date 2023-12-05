@@ -1,4 +1,5 @@
 import utils
+import time
 import config as c
 from simulation.generate_data import DataGeneration
 from simulation.test_network import Test
@@ -18,9 +19,13 @@ def main():
         sim = Test()
 
     elif options.manual_control:
+        c.fps = 120
         sim = ManualControl()
 
-    elif options.ask_params:
+    elif options.simulation:
+        sim = Inference()
+
+    else:
         print('Choose task:')
         print('0 --> generate targets randomly')
         print('1 --> reach target and go back to HB')
@@ -43,9 +48,7 @@ def main():
         c.phases = 'immediate' if phases == '0' else 'fixed' \
             if phases == '1' else 'dynamic'
 
-        sim = Inference()
-
-    else:
+        time.sleep(0.5)
         sim = Inference()
 
     # Run simulation

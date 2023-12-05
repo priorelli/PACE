@@ -10,7 +10,7 @@ dt = 0.4
 a_max = 1.0
 alpha = 0.4
 beta = 0.0
-k = 0.06
+lmbda = 0.06
 
 w_p = 0  # 2e-3
 w_a = 0  # 5e-5
