@@ -18,6 +18,8 @@ The dataset for the VAE is generated through the option `-g`, while `-t` will ru
 
 Plots can be generated through *plot.py*, either with the option `-a` for the free energy derivatives, `-d` for the belief trajectories, `-f` for the final positions of the hand, `-g` for the VAE gradients, `-p` for angles and velocities, `-s` for the scores, or `-v` for generating a video of the simulation.
 
+The folder *reference/video/* contains a few videos about target tracking, movements with or without visual input, and dynamic onset policy.
+
 ### Advanced configuration
 
 More advanced parameters can be manually set from *config.py*. Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`. Custom log names are set with the variable `log_name`.
