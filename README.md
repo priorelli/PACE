@@ -12,7 +12,7 @@ Check [this](https://priorelli.github.io/blog/) and [this](https://priorelli.git
 
 ### Start the simulation
 
-The simulation can be launched through *main.py* either with the option `-m` for manual control, `-s` for the active inference agent with default parameters, or `-a` for choosing the parameters from the console. If no option is specified, the default simulation will be launched. For the manual control simulation, the arm can be moved with the keys `Z`, `X`, `LEFT`, `RIGHT`, `UP` and `DOWN`.
+The simulation can be launched through *main.py* either with the option `-m` for manual control, `-s` for the active inference agent with default parameters, or `-a` for choosing the parameters from the console. If no option is specified, the last one will be launched. For the manual control simulation, the arm can be moved with the keys `Z`, `X`, `LEFT`, `RIGHT`, `UP` and `DOWN`.
 
 The dataset for the VAE is generated through the option `-g`, while `-t` will run a benchmark test on the trained VAE. For each datapoint, a random target size is sampled from the variable `target_min_max` in *config.py*.
 
