@@ -22,7 +22,7 @@ The folder *reference/video/* contains a few videos about target tracking, movem
 
 ### Advanced configuration
 
-More advanced parameters can be manually set from *config.py*. Custom log names are set with the variable `log_name`.
+More advanced parameters can be manually set from *config.py*. Custom log names are set with the variable `log_name`. The number of trials and steps can be set with the variables `n_trials` and `n_steps`, respectively.
 
 Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`.
 
