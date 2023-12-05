@@ -43,7 +43,7 @@ The active inference simulation involves the scripts *simulation/inference.py* a
 
 The functions `inference_step` of the class `Agent` in *simulation/agent.py* contains all the instructions of Algorithm 1. In particular, the function `get_p` returns a visual prediction through the VAE, and a proprioceptive prediction through the matrix `G_p`. Note that the input and output of the VAE is stored in an additional list, which is needed for the successive error backpropagation. Note also this function returns a velocity prediction `p_vel`, which however is not used in the analyses of the paper. The function `get_h` returns future beliefs computed through the intention matrices stored in `I` (encoding `I_t` and `I_h` of the paper). The list `I` can thus be used to realize custom dynamic behaviors. Functions `get_e_s` and `get_e_mu` compute sensory and dynamics prediction error, respectively. The function `get_likelihood` backpropagates the sensory errors toward the belief, multiplying them by the precisions encoded in the list `pi_s` and the variable `alpha`. Finally, the function `mu_dot` computes the total belief update, also considering the backward and forward errors of the dynamics function.
 
-Note that all the variables are normalized between 0 and 1 to ensure that every contribution to the belief updates has the same magnitude
+Note that all the variables are normalized between 0 and 1 to ensure that every contribution to the belief updates has the same magnitude.
 
 ## Required libraries
 
