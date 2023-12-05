@@ -22,7 +22,9 @@ The folder *reference/video/* contains a few videos about target tracking, movem
 
 ### Advanced configuration
 
-More advanced parameters can be manually set from *config.py*. Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`. Custom log names are set with the variable `log_name`.
+More advanced parameters can be manually set from *config.py*. Custom log names are set with the variable `log_name`.
+
+Both the target positions and the home button are stored in joint angle coordinates, the former in the list `targets` and the latter by the variable `home`.
 
 The variable `task` affects the generation of target positions, and can assume the following values:
 1. `test`: generates random target positions at each trial - see Figure 7;
