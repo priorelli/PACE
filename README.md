@@ -6,6 +6,8 @@
 
 This is the project related to the paper [Flexible Intentions: An Active Inference Theory](https://www.frontiersin.org/articles/10.3389/fncom.2023.1128694/full). It contains a proposal about encoding environmental entities (e.g., a target to reach or a previously memorized home button) and realizing dynamic goal-directed behavior such as object tracking, and some analyses on multisensory integration for movements. The paper [Intention Modulation for Multi-step Tasks in Continuous Time Active Inference](https://link.springer.com/chapter/10.1007/978-3-031-28719-0_19) extends this model by introducing a fixed multi-step behavior (e.g., reaching multiple target positions in sequence).
 
+Video simulations are found [here](https://priorelli.github.io/projects/1_flexible_intentions/).
+
 Check [this](https://priorelli.github.io/blog/) and [this](https://priorelli.github.io/projects/) for additional guides and projects.
 
 ## HowTo
